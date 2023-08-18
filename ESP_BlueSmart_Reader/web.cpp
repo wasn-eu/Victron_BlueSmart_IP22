@@ -104,6 +104,8 @@ void startWebserver() {
         String html = FPSTR(HEADER_html);
         html += FPSTR(MAIN_html);
         html += FPSTR(FOOTER_html);
+        html.replace("__VOLTAGE__", String(victron.voltage));
+        html.replace("__CURRENT", String(victron.current));
         html.replace("__SYSTEMID__", systemID());
         html.replace("__FIRMWARE__", String(FIRMWARE_VERSION));
         html.replace("__BUILD__", String(__DATE__)+" "+String(__TIME__));
@@ -155,8 +157,6 @@ void startWebserver() {
         html += FPSTR(CONFIG_html);
         html += FPSTR(FOOTER_html);
         
-        html.replace("__VOLTAGE__", String(victron.voltage));
-        html.replace("__CURRENT", String(victron.current));
         html.replace("__BACKUP_CYCLE__", String(settings.backupCycleMin));
         html.replace("__BACKUP_CYCLE_MIN__", String(BACKUP_CYCLE_MIN));
         html.replace("__BACKUP_CYCLE_MAX__", String(BACKUP_CYCLE_MAX));

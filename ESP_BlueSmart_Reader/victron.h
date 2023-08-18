@@ -15,6 +15,8 @@
 #include <SoftwareSerial.h>
 
 #define METER_ID_LEN_MIN 2
+#define READINGS_INTERVAL_MS_MIN 15
+#define READINGS_INTERVAL_MS_MAX 50
 
 typedef struct {
     float voltage;

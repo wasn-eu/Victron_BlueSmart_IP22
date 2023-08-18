@@ -65,7 +65,6 @@ void loop() {
     static uint32_t prevLoopTimer = 0;
     static uint32_t busyTime = 0;
 
-    // scan ferraris disk for red marker
     if (tsDiff(previousMeasurementMillis) > settings.readingsIntervalMs) {
         previousMeasurementMillis = millis();
         if (readVictron()) {

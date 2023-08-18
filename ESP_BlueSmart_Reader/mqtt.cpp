@@ -51,7 +51,7 @@ static bool publishJSON(JsonDocument& json, char *topic, bool retain, bool verbo
 // add device description to HA discovery sensor topic
 static void addDeviceDescription(JsonDocument& json) {
     JsonObject dev = json.createNestedObject("dev");
-    dev["name"] = "WiFi Power Meter " + String(settings.systemID);
+    dev["name"] = "Victron BlueSmart IP22 " + String(settings.systemID);
     dev["ids"] = settings.systemID;
     dev["cu"] = "http://" + WiFi.localIP().toString();
     dev["mdl"] = "ESP8266";
@@ -125,8 +125,8 @@ static void publishHADiscoveryMessage(bool publish) {
         publishJSON(JSON, topicTotalCon, true, false);
 
 
-        JSON["name"] = "WiFi Power Meter " + String(settings.systemID) + " WiFi Signal Strength";
-        JSON["unique_id"] = "wifipowermeter-" + String(settings.systemID)+ "-rssi";
+        JSON["name"] = "Victron SmartBlue IP22 " + String(settings.systemID) + " WiFi Signal Strength";
+        JSON["unique_id"] = "victron-bluesmart-" + String(settings.systemID)+ "-rssi";
         JSON["unit_of_meas"] = "dBm";
         JSON["dev_cla"] = "signal_strength";
         JSON["stat_t"] = devTopic;
@@ -135,8 +135,8 @@ static void publishHADiscoveryMessage(bool publish) {
         publishJSON(JSON, topicRSSI, true, false);
 
         if (settings.enablePowerSavingMode) {
-            JSON["name"] = "WiFi Power Meter " + String(settings.systemID) + " WiFi Power Saving Uptime";
-            JSON["unique_id"] = "wifipowermeter-" + String(settings.systemID)+ "-wifi-powersaving-uptime";
+            JSON["name"] = "Victron SmartBlue IP22 " + String(settings.systemID) + " WiFi Power Saving Uptime";
+            JSON["unique_id"] = "victron-bluesmart-" + String(settings.systemID)+ "-wifi-powersaving-uptime";
             JSON["unit_of_meas"] = "s"; // seconds
             JSON["ic"] = "mdi:wifi-arrow-up-down";
             JSON["dev_cla"] = "duration";
@@ -145,8 +145,8 @@ static void publishHADiscoveryMessage(bool publish) {
             addDeviceDescription(JSON);
             publishJSON(JSON, topicWifiOnAir, true, false);
         } else {
-            JSON["name"] = "WiFi Power Meter " + String(settings.systemID) + " WiFi Reconnect Counter";
-            JSON["unique_id"] = "wifipowermeter-" + String(settings.systemID)+ "-wifi-reconnect-counter";
+            JSON["name"] = "Victron SmartBlue IP22 " + String(settings.systemID) + " WiFi Reconnect Counter";
+            JSON["unique_id"] = "victron-bluesmart-" + String(settings.systemID)+ "-wifi-reconnect-counter";
             JSON["ic"] = "mdi:wifi-alert";
             JSON["stat_t"] = devTopic;
             JSON["val_tpl"] = "{{ value_json."+ String(MQTT_SUBTOPIC_WIFI) +" }}";
@@ -154,8 +154,8 @@ static void publishHADiscoveryMessage(bool publish) {
             publishJSON(JSON, topicWifiCnt, true, false);
         }
 
-        JSON["name"] = "WiFi Power Meter " + String(settings.systemID) + " Uptime";
-        JSON["unique_id"] = "wifipowermeter-" + String(settings.systemID)+ "-uptime";
+        JSON["name"] = "Victron SmartBlue IP22 " + String(settings.systemID) + " Uptime";
+        JSON["unique_id"] = "victron-bluesmart-" + String(settings.systemID)+ "-uptime";
         JSON["unit_of_meas"] = "m"; // minutes
         JSON["ic"] = "mdi:clock-outline";
         JSON["dev_cla"] = "duration";
