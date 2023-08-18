@@ -25,6 +25,9 @@ Checksum        :A0920000022
    
 and then there is much more data in hex format.   
 I am still testing and evaluating what this data means.   
+It looks like the ve.direct protocol.
+hopefully i can find the rx pin on the charger side.
+
    
 But you can read the battery voltage (V  28790) and charging Current (I  5100).   
 You have to divide the battery voltage and charging curent by 1000.   
