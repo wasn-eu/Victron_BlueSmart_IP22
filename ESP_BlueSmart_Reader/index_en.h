@@ -69,16 +69,6 @@ function updateUI() {
     document.getElementById("saveThreshold").style.display = "none";
   } 
 
-  if (totalCounter <= 0)
-    document.getElementById("resetCounter").style.display = "none";
-  else
-    document.getElementById("resetCounter").style.display = "inline-grid";
-  if (currentPower > -2)
-    document.getElementById("tr1").style.display = "table-row";
-  else
-    document.getElementById("tr1").style.display = "none";
-}
-
 function hideMessages() {
   document.getElementById("message").style.display = "none";
   document.getElementById("invalidThreshold").style.display = "none";
@@ -103,33 +93,6 @@ function showMessage(message, timeout) {
   messageShown = 1;
 }
 
-function calcThreshold() {
-  var xhttp = new XMLHttpRequest();
-  if (confirm("Really calibrate sensor?")) {
-    xhttp.open("GET", "calcThreshold", true);
-  	xhttp.send();
-    pulseThreshold = -1;
-  	thresholdSaved = 0;
-  }
-}
-
-function saveThreshold() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "saveThreshold", true);
-  xhttp.send();
-  showMessage("thresholdSaved", 3000);
-  thresholdSaved = 1;
-}
-
-function resetCounter() {
-  var xhttp = new XMLHttpRequest();
-  if (confirm("Really reset all counters?")) {
-    xhttp.open("GET", "resetCounter", true);
-  	xhttp.send();
-    showMessage("thresholdReset", 3000);
-  }
-}
-
 function restartSystem() {
   var xhttp = new XMLHttpRequest();
   if (confirm("Really restart system?")) {
@@ -151,20 +114,10 @@ function getReadings() {
         msgType = json.msgType;
         msgTimeout = (json.msgTimeout * 1000);
       }
-      document.getElementById("TotalCounter").innerHTML = json.totalCounter;
-      document.getElementById("TotalConsumption").innerHTML = (json.totalConsumption > 0 ? json.totalConsumption : "--");
-      document.getElementById("CurrentPower").innerHTML = (json.currentPower > 0 ? json.currentPower : "--");
+      document.getElementById("voltage").innerHTML = json.voltage;
+      document.getElementById("current").innerHTML = json.current;
       document.getElementById("Runtime").innerHTML = json.runtime;
       document.getElementById("RSSI").innerHTML = json.rssi;
-      document.getElementById("CurrentReadings").innerHTML = json.currentReadings;
-      document.getElementById("TotalReadings").innerHTML = json.totalReadings;
-      document.getElementById("PulseMin").innerHTML = (json.pulseMin > 0 ? json.pulseMin : "--");
-      document.getElementById("PulseMax").innerHTML = (json.pulseMax > 0 ? json.pulseMax : "--");
-      document.getElementById("PulseThreshold").innerHTML = (json.pulseThreshold > 0 ? json.pulseThreshold : "--");
-      pulseThreshold = json.pulseThreshold;
-      thresholdCalculation = json.thresholdCalculation;
-      totalCounter = json.totalCounter;
-      currentPower = json.currentPower;
    	} 
   };
   xhttp.open("GET", "readings?local=true", true);
@@ -200,12 +153,12 @@ setInterval(refreshDevTime, 1000);
 
 <div class="Modbusmonrow">
 	<div class="Modbusmoncolumn1">Battery Voltage:</div>
-  <div class="Modbusmoncolumn2"><span id="voltage">--.-</span></div>
+  <div class="Modbusmoncolumn2"><span id="voltage">__VOLTAGE__</span></div>
   <div class="Modbusmoncolumn3"> V</div>
 </div>
 <div class="Modbusmonrow">
 	<div class="Modbusmoncolumn1" id="tr1">Charging Current:</div>
-  <div class="Modbusmoncolumn2"><span id="current">--.-</span></div>
+  <div class="Modbusmoncolumn2"><span id="current">__CURRENT__</span></div>
   <div class="Modbusmoncolumn3"> A</div>
 </div>
 <div class="Modbusmonrow">
@@ -511,10 +464,6 @@ setInterval(refreshDevTime, 1000);
   <input id="input_meter_id" name="meter_id" size="16" maxlength="16" value="__METER_ID__" onkeyup="ASCIIOnly(this);"></p>
   <p><b>Auto-backup counter (__BACKUP_CYCLE_MIN__-__BACKUP_CYCLE_MAX__ min.)</b><br />
   <input id="input_backup_cycle" name="backup_cycle" size="16" maxlength="3" value="__BACKUP_CYCLE__" onkeyup="digitsOnly(this);"></p>
-  <p><input id="checkbox_power" name="current_power" onclick="togglePower();" type="checkbox" __CURRENT_POWER__><b>Calculate current consumption</b></p>
-  <span id="power"><p><input id="checkbox_power_avg" name="current_power_avg" onclick="togglePowerAvg();" type="checkbox" __POWER_AVG__><b>Enable moving average</b></p>
-  <span id="power_avg"><p><b>Averaging interval (__POWER_AVG_SECS_MIN__-__POWER_AVG_SECS_MAX__ sec.)</b><br />
-  <input id="input_power_avg_secs" name="power_avg_secs" size="16" maxlength="3" value="__POWER_AVG_SECS__" onkeyup="digitsOnly(this);"></p></span>
   </span>
   </fieldset>
   <br />

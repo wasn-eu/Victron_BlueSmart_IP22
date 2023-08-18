@@ -72,12 +72,12 @@
 //#define INFLUXDB_ENABLE
 #define INFLUXDB_HOST "__influxdb_server__"
 #define INFLUXDB_UDP_PORT 8089
-#define INFLUXDB_DEVICE_TAG "__wifipowermeter__"
+#define INFLUXDB_DEVICE_TAG "__victron_bluesmart__"
 
 // to make Arduino IDE happy
 // version number is set in platformio.ini
 #ifndef FIRMWARE_VERSION
-#define FIRMWARE_VERSION 258
+#define FIRMWARE_VERSION 259
 #endif
 
 // set default port for MQTT over TLS

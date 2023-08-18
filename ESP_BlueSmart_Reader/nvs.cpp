@@ -17,7 +17,7 @@ EEPROM_Rotate EEP;
 settings_t settings;
 settings_t defaultSettings = {
     60,
-    1,
+    10,
 #ifdef MQTT_ENABLE
     true,
 #else
@@ -111,7 +111,7 @@ void saveNVS(bool rotate) {
 const char* nvs2json() {
     DynamicJsonDocument JSON(768);
     static char buf[896];
-
+    JSON["readingsIntervalMs"] = settings.readingsIntervalMs;
     JSON["enableMQTT"] = settings.enableMQTT;
     JSON["mqttBroker"] = settings.mqttBroker;
     JSON["mqttBrokerPort"] = settings.mqttBrokerPort;
@@ -152,6 +152,9 @@ bool json2nvs(const char* buf, size_t size) {
         return false;
     }
 
+    if (JSON["readingsIntervalMs"] >= READINGS_INTERVAL_MS_MIN && JSON["readingsIntervalMs"] <= READINGS_INTERVAL_MS_MAX)
+        settings.readingsIntervalMs = JSON["readingsIntervalMs"];
+        
     settings.enableMQTT = JSON["enableMQTT"];
     if (strlen(JSON["mqttBroker"]) >= MQTT_BROKER_LEN_MIN)
         strlcpy(settings.mqttBroker, JSON["mqttBroker"], sizeof(settings.mqttBroker));

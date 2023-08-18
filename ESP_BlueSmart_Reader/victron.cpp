@@ -23,6 +23,8 @@ victron_t victron;
 
 byte inbyte;
 String incomingString;
+float current;
+float voltage;
 
 
 // setup pin for IR sensor and allocate array for pulse readings
@@ -43,14 +45,18 @@ bool readVictron() {
       if (testSerial.available()) {
         incomingString = testSerial.readStringUntil('\n');
       }
-      Serial.print(incomingString);
+      voltage = incomingString.toFloat() / 1000;
+      victron.voltage = voltage;
+      Serial.print(incomingString.substring(-5));
       break;
     case 'I':  //Display mode 1
       Serial.print("Current: ");
       if (testSerial.available()) {
         incomingString = testSerial.readStringUntil('\n');
       }
-      Serial.print(incomingString);
+      current = incomingString.toFloat() / 1000;
+      victron.current = current;
+      Serial.print(incomingString.substring(-4));
       break;
   }
   return true;
