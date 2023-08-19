@@ -29,7 +29,8 @@ float voltage;
 
 // setup pin for IR sensor and allocate array for pulse readings
 void initVictron() {
-  testSerial.begin(19200, EspSoftwareSerial::SWSERIAL_8N1, A0, D5, false, 95, 11);
+  testSerial.begin(19200, EspSoftwareSerial::SWSERIAL_8N1, D5, D4);
+  //, false, 95, 11);
 }
 
 
@@ -37,6 +38,16 @@ void initVictron() {
 // returns true if system is calibrated and red marker was identified
 bool readVictron() {
   if (testSerial.available()) inbyte = Serial.read();  //Serial input available
+
+  Serial.print("inbyte: ");
+  Serial.println(inbyte);
+
+  if (testSerial.available()) {
+    incomingString = testSerial.readStringUntil('\n');
+  }
+  Serial.print("incoming: ");
+  Serial.println(incomingString);
+
   switch (inbyte) {
 
     //====(Serial Menu)======
