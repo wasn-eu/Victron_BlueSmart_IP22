@@ -10,6 +10,8 @@ You can find the pinout here or in the Images folder Victron_BlueSmart_pinout.jp
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Victron_BlueSmart_pinout.jpg" width=500>  
 </p>
 
+The used bluetooth controller is a Raytec MDBT40.
+You can find information about the module in the DataSheets folder.
   
 The signal level is 3.3V and the baudrate is 19200.  
 After connecting a 3.3V TTL to USB converter to the signal and GND pin i captured some data.  
