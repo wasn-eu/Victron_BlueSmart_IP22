@@ -43,7 +43,7 @@ if you connect the ttl to usb cable direct to a venus os device (i have on ehere
 the charger will show and you can see all information about it:
   
 <p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Screenshot_01.jpg" width=500>  
+<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/ScreenShot_01.jpg" width=500>  
 </p>
 <p align="center">
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Screenshot_02.jpg" width=500>  
