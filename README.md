@@ -62,3 +62,5 @@ With this you can use a standard ve.direct cable:
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/adapter_pcb.jpg?raw=true" width=500>  
 </p>
 
+All files needed are in the pcb folder.
+
