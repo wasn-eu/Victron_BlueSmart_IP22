@@ -56,3 +56,9 @@ the charger will show and you can see all information about it:
 </p>
 
 
+I have just created a little adapter pcb with a level shifter for RX and TX.   
+With this you can use a standard ve.direct cable:
+<p align="center">
+<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Imagesadapter_pcb.jpg" width=500>  
+</p>
+
