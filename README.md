@@ -2,15 +2,15 @@
 ## Using the BlueSmart IP22 Charger without Bluetooth.
 ## (c) by <img src="https://github.com/wasn-eu/CubeCell_Getting_Started/raw/master/images/wasn_logo.png" width=70>
 
-- [Finding the right connection]{#finding-the-right-connection}   
- -- [Inside the BlueSmart IP22 charger]{#inside-the-bluesmart-ip22-charger}   
- -- [Capture of Data]{#capture-of-data}   
-- [Connecting to venus]{#connecting-to-venus}   
- -- [Shematics of USB to 3.3V TTL]{#shematics-usb-to-3.3v-ttl}    
- -- [Connected to venus]{#connected-to-venus}   
-- [Reading and Adapter]{#reading-and-adapter}   
- -- [Adapter PCB]{#adapter-pcb}   
- -- [ESP Reader][#esp-reader}   
+- [Finding the right connection](#finding-the-right-connection)   
+ -- [Inside the BlueSmart IP22 charger](#inside-the-bluesmart-ip22-charger)   
+ -- [Capture of Data](#capture-of-data)   
+- [Connecting to venus](#connecting-to-venus)   
+ -- [Shematics of USB to 3.3V TTL](#shematics-usb-to-3.3v-ttl)    
+ -- [Connected to venus](#connected-to-venus)   
+- [Reading and Adapter](#reading-and-adapter)   
+ -- [Adapter PCB](#adapter-pcb)   
+ -- [ESP Reader](#esp-reader)   
 
 ## Finding the right connection
 ### Inside the BlueSmart IP22 charger
