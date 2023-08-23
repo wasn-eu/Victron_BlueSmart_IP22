@@ -55,7 +55,7 @@ In this example my battery have 28.79V and is currentlt=y charged with 5.1A.
 ### Shematics of USB to TTL
 
 <p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Victron_BlueSmart_ftdi.jpg" width=500>  
+<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/Victron_BlueSmart_ftdi.jpg?raw=true" width=500>  
 </p>
 On the picture the jumper for the TTL level is wrong. 
 IMPORTANT: change the jumper to 3.3V    
