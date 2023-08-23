@@ -6,7 +6,7 @@
  -- [Inside the BlueSmart IP22 charger](#inside-the-bluesmart-ip22-charger)   
  -- [Capture of Data](#capture-of-data)   
 - [Connecting to venus](#connecting-to-venus)   
- -- [Shematics of USB to TTL](#shematics-usb-to-ttl)    
+ -- [Shematics of USB to TTL](#shematics-of-usb-to-ttl)    
  -- [Connected to venus](#connected-to-venus)   
 - [Reading and Adapter](#reading-and-adapter)   
  -- [Adapter PCB](#adapter-pcb)   
