@@ -55,7 +55,7 @@ In this example my battery have 28.79V and is currentlt=y charged with 5.1A.
 ### Shematics of USB to 3.3V TTL
 
 
-### Connected to venus OS
+### Connected to venus
 
 if you connect the ttl to usb cable direct to a venus os device (i have on ehere running on a raspberry pi 4) 
 the charger will show and you can see all information about it:
