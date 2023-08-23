@@ -6,7 +6,7 @@
  -- [Inside the BlueSmart IP22 charger](#inside-the-bluesmart-ip22-charger)   
  -- [Capture of Data](#capture-of-data)   
 - [Connecting to venus](#connecting-to-venus)   
- -- [Shematics of USB to 3.3V TTL](#shematics-usb-to-3-3v-ttl)    
+ -- [Shematics of USB to TTL](#shematics-usb-to-ttl)    
  -- [Connected to venus](#connected-to-venus)   
 - [Reading and Adapter](#reading-and-adapter)   
  -- [Adapter PCB](#adapter-pcb)   
@@ -52,7 +52,10 @@ You have to divide the battery voltage and charging curent by 1000.
 In this example my battery have 28.79V and is currentlt=y charged with 5.1A.  
 
 ## Connecting to venus
-### Shematics of USB to 3.3V TTL
+### Shematics of USB to TTL
+
+You have to use TTL to USB adapter for 3.3V TTL level.   
+If you use an isolated adapter you have to connect the 3.3V pin to the adapter, if not dont connect it.   
 
 
 ### Connected to venus
