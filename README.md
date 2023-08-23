@@ -54,6 +54,12 @@ In this example my battery have 28.79V and is currentlt=y charged with 5.1A.
 ## Connecting to venus
 ### Shematics of USB to TTL
 
+<p align="center">
+<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Victron_BlueSmart_ftdi.jpg" width=500>  
+</p>
+On the picture the jumper for the TTL level is wrong. 
+IMPORTANT: change the jumper to 3.3V    
+
 You have to use TTL to USB adapter for 3.3V TTL level.   
 If you use an isolated adapter you have to connect the 3.3V pin to the adapter, if not dont connect it.   
 
