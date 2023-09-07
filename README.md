@@ -8,7 +8,7 @@
 - [Connecting to venus](#connecting-to-venus)   
  -- [Shematics of USB to TTL](#shematics-of-usb-to-ttl)    
  -- [Connected to venus](#connected-to-venus)   
- -- [Change_Charge_Current](#change-charge-current)    
+ -- [Change Charge Current](#change-charge-current)    
 - [Reading and Adapter](#reading-and-adapter)   
  -- [Adapter PCB](#adapter-pcb)   
  -- [ESP Reader](#esp-reader)   
@@ -120,6 +120,8 @@ python charge_current.py X
 ```
 
 where X is the needed charging current in A
+
+Thanks to sean56688 from victron community
 
 
 
