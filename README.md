@@ -173,6 +173,7 @@ while(True):
 You need to to adjust the line:
 ```
 result = client.read_input_registers(822, 1)
+                                     ---
 ```
 to fit your system.     
      
