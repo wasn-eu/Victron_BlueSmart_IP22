@@ -129,7 +129,7 @@ If you are not feeding to grid it will send a charging current of 0A.
       
 The script will read the Grid Power and sent the charge current every 10 seconds. If you would like another interval change the sleep value in seconds in the last line of the script.
       
-just create the file change_charge_current.py in /root
+just create the file change_charge_current.py in /home/root
 
 ```
 #!/usr/bin/python
@@ -200,7 +200,7 @@ crontab -e
 ````
 Add this:
 ```
-@reboot python /root/change_charge_current.py > /var/log/change_current.log
+@reboot python /home/root/change_charge_current.py > /var/log/change_current.log
 ```
 
 
