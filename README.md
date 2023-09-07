@@ -132,6 +132,7 @@ The script will read the Grid Power and sent the charge current every 10 seconds
 just create the file change_charge_current.py in /root
 
 ```
+#!/usr/bin/python
 import serial
 import time
 from pymodbus.constants import Defaults
@@ -186,6 +187,11 @@ L3  822
 ```
 
 Now you need to run this script on startup of venus os.    
+
+Make the script executable:
+```
+chmod a+x change_charge_current.py
+```
     
 Add the script to crontab.    
 Executes this command:
