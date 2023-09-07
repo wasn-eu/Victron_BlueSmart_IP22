@@ -200,7 +200,7 @@ crontab -e
 ````
 Add this:
 ```
-@reboot python /home/root/change_charge_current.py > /var/log/change_current.log
+@reboot python /home/root/change_charge_current.py > /var/log/change_charge_current.log
 ```
 
 
