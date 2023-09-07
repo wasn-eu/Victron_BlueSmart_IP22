@@ -154,22 +154,24 @@ while(True):
     power=decoder.decode_16bit_int()
     if power < 0:
       current = power / 24 * (-1)
-    print("Grid Power:    {0:.0f}W".format(power))
-    print("Grid Current:  {0:.2f}A".format(current))
+      print("Grid Power:    {0:.0f}W".format(power))
+      print("Grid Current:  {0:.2f}A".format(current))
 
-    numP1 = (int)(current * 10)
-    numP2 = (0x70 - numP1) & 0xFF
-    hexP1 = "%X" % (numP1)
-    hexP2 = "%X" % (numP2)
-    if len(hexP1) < 2:
-      hexP1 += "0"
-    msg =  ':8F0ED00' + hexP1[0] + hexP1[1] + '00' + hexP2[0] + hexP2[1] + '\n'
-    print("VE.direct out: " + msg)
-    ser.write(msg.encode())
+      numP1 = (int)(current * 10)
+      numP2 = (0x70 - numP1) & 0xFF
+      hexP1 = "%X" % (numP1)
+      hexP2 = "%X" % (numP2)
+      if len(hexP1) < 2:
+        hexP1 += "0"
+      msg =  ':8F0ED00' + hexP1[0] + hexP1[1] + '00' + hexP2[0] + hexP2[1] + '\n'
+      print("VE.direct out: " + msg)
+      ser.write(msg.encode())
+    else:
+      print("Charging off")
   else:
     print("Error:", result)
 
-  time.sleep(10)
+  time.sleep(30)
 ```
 You need to to adjust the line:
 ```
