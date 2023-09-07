@@ -8,7 +8,8 @@
 - [Connecting to venus](#connecting-to-venus)   
  -- [Shematics of USB to TTL](#shematics-of-usb-to-ttl)    
  -- [Connected to venus](#connected-to-venus)   
- -- [Manual_Change Charge Current](#manual-change-charge-current)    
+ -- [Manual_Change Charge Current](#manual-change-charge-current)
+ -- [Automatic Change Charge Current](#automatic-change-charge-current) 
 - [Reading and Adapter](#reading-and-adapter)   
  -- [Adapter PCB](#adapter-pcb)   
  -- [ESP Reader](#esp-reader)   
@@ -120,6 +121,68 @@ where X is the needed charging current in A
 
 Thanks to sean56688 from victron community
 
+### Automatic Change Charge Current
+
+This Script will read the Grid Power with modbus from your venus device.    
+When the read power is negativ (feeding to grid) it calculates the needed charge current to compensate and send it to your charger.    
+If you are not feeding to grid it will send a charging current of 0A.    
+The script will read the Grid Power and sent the charge current every 10 seconds. If you would like another interval change the sleep value in seconds in the last line of the script.
+
+just create the file change_charge.py in /root
+
+```
+import serial
+import time
+from pymodbus.constants import Defaults
+from pymodbus.constants import Endian
+from pymodbus.client.sync import ModbusTcpClient as ModbusClient
+from pymodbus.payload import BinaryPayloadDecoder
+
+ser = serial.Serial("/dev/ttyUSB1", 19200)
+
+while(True):
+  current = 0.0
+  Defaults.Timeout = 5
+  Defaults.Retries = 5
+
+  client = ModbusClient('192.168.88.173', port=502, timeout=3, unit_id=100)
+  result = client.read_input_registers(822, 1)
+  if not result.isError():
+    decoder = BinaryPayloadDecoder.fromRegisters(result.registers, byteorder=Endian.Big)
+    power=decoder.decode_16bit_int()
+    if power < 0:
+      current = power / 24 * (-1)
+    print("Grid Power:    {0:.0f}W".format(power))
+    print("Grid Current:  {0:.2f}A".format(current))
+
+    numP1 = (int)(current * 10)
+    numP2 = (0x70 - numP1) & 0xFF
+    hexP1 = "%X" % (numP1)
+    hexP2 = "%X" % (numP2)
+    if len(hexP1) < 2:
+      hexP1 += "0"
+    msg =  ':8F0ED00' + hexP1[0] + hexP1[1] + '00' + hexP2[0] + hexP2[1] + '\n'
+    print("VE.direct out: " + msg)
+    ser.write(msg.encode())
+  else:
+    print("Error:", result)
+
+  time.sleep(10)
+```
+You need to to adjust the line:
+```
+result = client.read_input_registers(822, 1)
+```
+to fit your system.  
+here it a little list what to write for the value 822 in your setup:
+
+```
+L1  820
+L2  821
+L3  822
+```
+
+Now you need to run this script on startup of venus os.
 
 
 ## Reading and Adapter
