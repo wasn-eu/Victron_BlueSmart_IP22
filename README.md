@@ -8,7 +8,7 @@
 - [Connecting to venus](#connecting-to-venus)   
  -- [Shematics of USB to TTL](#shematics-of-usb-to-ttl)    
  -- [Connected to venus](#connected-to-venus)   
- -- [Change Charge Current](#change-charge-current)    
+ -- [Manual_Change Charge Current](#manual-change-charge-current)    
 - [Reading and Adapter](#reading-and-adapter)   
  -- [Adapter PCB](#adapter-pcb)   
  -- [ESP Reader](#esp-reader)   
@@ -85,7 +85,7 @@ the charger will show and you can see all information about it:
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Screenshot_04.jpg" width=500>  
 </p>
 
-### Change Charge Current
+### Manual Change Charge Current
 
 just wrote a little python script to change the charge current directly on the venus os raspberry:
 
@@ -96,9 +96,6 @@ import sys
 import serial
 ser = serial.Serial("/dev/ttyUSB1", 19200)
 chargeCurrent = int(sys.argv[1])
-
-def sprintf(buf, fmt, *args):
-   buf.write(fmt % args)
 
 numP1 = (int)(chargeCurrent * 10)
 numP2 = (0x70 - numP1) & 0xFF
