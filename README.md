@@ -126,8 +126,9 @@ Thanks to sean56688 from victron community
 This Script will read the Grid Power with modbus from your venus device.    
 When the read power is negativ (feeding to grid) it calculates the needed charge current to compensate and send it to your charger.    
 If you are not feeding to grid it will send a charging current of 0A.    
+      
 The script will read the Grid Power and sent the charge current every 10 seconds. If you would like another interval change the sleep value in seconds in the last line of the script.
-
+      
 just create the file change_charge.py in /root
 
 ```
@@ -173,8 +174,9 @@ You need to to adjust the line:
 ```
 result = client.read_input_registers(822, 1)
 ```
-to fit your system.  
-here it a little list what to write for the value 822 in your setup:
+to fit your system.     
+     
+Here it a little list what to write for the value 822 in your setup:
 
 ```
 L1  820
