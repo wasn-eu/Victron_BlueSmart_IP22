@@ -8,6 +8,7 @@
 - [Connecting to venus](#connecting-to-venus)   
  -- [Shematics of USB to TTL](#shematics-of-usb-to-ttl)    
  -- [Connected to venus](#connected-to-venus)   
+ -- [Change_Charge_Current](#change-charge-current)    
 - [Reading and Adapter](#reading-and-adapter)   
  -- [Adapter PCB](#adapter-pcb)   
  -- [ESP Reader](#esp-reader)   
@@ -32,7 +33,8 @@ After connecting a 3.3V TTL to USB converter to the RX/TX and GND pin i captured
 THe capture is in the Captures folder.  
   
 The Capture starts with a human readable header:  
-  
+
+```
 PID     0xA334   
 FWE     0342FF   
 SER#    HQ2230XY6XR   
@@ -42,7 +44,8 @@ T       ---
 ERR     0   
 CS      4   
 HC#     1105659   
-Checksum        :A0920000022   
+Checksum        :A0920000022
+```
    
 and then there is much more data in hex format.   
 It looks like that it is the ve.direct protocol.
@@ -81,6 +84,44 @@ the charger will show and you can see all information about it:
 <p align="center">
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Screenshot_04.jpg" width=500>  
 </p>
+
+### Change Charge Current
+
+just wrote a little python script to change the charge current directly on the venus os raspberry:
+
+name it charge_current.py
+
+```
+import sys
+import serial
+ser = serial.Serial("/dev/ttyUSB1", 19200)
+chargeCurrent = int(sys.argv[1])
+
+def sprintf(buf, fmt, *args):
+   buf.write(fmt % args)
+
+numP1 = (int)(chargeCurrent * 10)
+numP2 = (0x70 - numP1) & 0xFF
+hexP1 = "%X" % (numP1)
+hexP2 = "%X" % (numP2)
+
+# Write to serial port
+msg =  ':8F0ED00' + hexP1[0] + hexP1[1] + '00' + hexP2[0] + hexP2[1] + '\n'
+print(msg)
+ser.write(msg.encode())
+```
+
+you have to change the serial device for your setup.
+
+just run it with:
+
+```
+python charge_current.py X
+```
+
+where X is the needed charging current in A
+
+
 
 ## Reading and Adapter
 ### Adapter PCB
