@@ -129,7 +129,7 @@ If you are not feeding to grid it will send a charging current of 0A.
       
 The script will read the Grid Power and sent the charge current every 10 seconds. If you would like another interval change the sleep value in seconds in the last line of the script.
       
-just create the file change_charge.py in /root
+just create the file change_charge_current.py in /root
 
 ```
 import serial
@@ -185,7 +185,17 @@ L2  821
 L3  822
 ```
 
-Now you need to run this script on startup of venus os.
+Now you need to run this script on startup of venus os.    
+    
+Add the script to crontab.    
+Executes this command:
+```
+crontab -e
+````
+Add this:
+```
+@reboot python /root/change_charge_current.py > /var/log/change_current.log
+```
 
 
 ## Reading and Adapter
