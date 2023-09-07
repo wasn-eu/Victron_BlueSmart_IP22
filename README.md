@@ -203,6 +203,11 @@ Add this:
 @reboot python /home/root/change_charge_current.py > /var/log/change_charge_current.log
 ```
 
+just found a problem that the charger does not accept a current value of 0.     
+the minimum value is 3A     
+Now i need to find out how to turn the charging on and off.     
+
+
 
 ## Reading and Adapter
 ### Adapter PCB
