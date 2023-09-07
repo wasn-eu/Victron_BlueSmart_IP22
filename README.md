@@ -8,7 +8,7 @@
 - [Connecting to venus](#connecting-to-venus)   
  -- [Shematics of USB to TTL](#shematics-of-usb-to-ttl)    
  -- [Connected to venus](#connected-to-venus)   
- -- [Manual_Change Charge Current](#manual-change-charge-current)    
+ -- [Manual Change Charge Current](#manual-change-charge-current)    
  -- [Automatic Change Charge Current](#automatic-change-charge-current)    
 - [Reading and Adapter](#reading-and-adapter)   
  -- [Adapter PCB](#adapter-pcb)   
