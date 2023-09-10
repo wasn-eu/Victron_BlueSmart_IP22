@@ -11,7 +11,7 @@
  -- [Manual Change Charge Current](#manual-change-charge-current)    
  -- [Automatic Change Charge Current](#automatic-change-charge-current)    
  -- [Service Change Charge Current](#service-change-charge-current)     
-- [Reading and Adapter](#reading-and-adapter)   
+- [Adapter](#adapter)   
  -- [Adapter PCB](#adapter-pcb)     
 
 ## Finding the right connection
@@ -240,13 +240,18 @@ This will output somethink like ```/service/bluesmart-charger: up (pid 5845) 185
 If the seconds are under 5 then the service crashes and gets restarted all the time. If you do not see anything in the logs you can increase the log level in ```/data/etc/bluesmart-charger/config.ini``` by changing ```logging = WARNING``` to ```logging = INFO``` or ```logging = DEBUG```
 
 
-## Reading and Adapter
+## Adapter
 ### Adapter PCB
 
 I have just created a little adapter pcb with a level shifter for RX and TX.   
 With this you can use a standard ve.direct cable:
 <p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/adapter_pcb.jpg?raw=true" width=500>  
+<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/adapter_pcb.jpg?raw=true" width=500>
+<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/adapter_3d.jpg?raw=true" width=500>
+</p>
+And there is a little for it.
+<p align="center">
+<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/adapter_case.jpg?raw=true" width=500>
 </p>
 
 All files needed are in the pcb folder.
