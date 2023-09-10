@@ -113,6 +113,7 @@ def main():
         logging.debug("VE.direct out: " + msg)
         ser.write(msg.encode())
       else:
+        logging.info("Grid Power:    {0:.0f}W".format(power))
         logging.info("Charging off")
     else:
       logging.error("Error:", result)
