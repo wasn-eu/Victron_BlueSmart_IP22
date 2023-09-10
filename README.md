@@ -238,7 +238,7 @@ The service status can be checked with svstat: ```svstat /service/bluesmart-char
 
 This will output somethink like ```/service/bluesmart-charger: up (pid 5845) 185 seconds```
 
-If the seconds are under 5 then the service crashes and gets restarted all the time. If you do not see anything in the logs you can increase the log level in ```/data/etc/bluesmart-charger/config.ini``` by changing ```ogging = WARNING``` to ```logging = INFO``` or ```logging = DEBUG```
+If the seconds are under 5 then the service crashes and gets restarted all the time. If you do not see anything in the logs you can increase the log level in ```/data/etc/bluesmart-charger/config.ini``` by changing ```logging = WARNING``` to ```logging = INFO``` or ```logging = DEBUG```
 
 
 ## Reading and Adapter
