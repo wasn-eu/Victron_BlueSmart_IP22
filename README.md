@@ -119,7 +119,7 @@ python charge_current.py X
 
 where X is the needed charging current in A
 
-Thanks to sean56688 from victron community
+Thanks to [sean56688](https://community.victronenergy.com/users/46454/sean56688.html) from victron community
 
 ### Automatic Change Charge Current
 
