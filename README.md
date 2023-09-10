@@ -12,8 +12,7 @@
  -- [Automatic Change Charge Current](#automatic-change-charge-current)    
  -- [Service Change Charge Current](#service-change-charge-current)     
 - [Reading and Adapter](#reading-and-adapter)   
- -- [Adapter PCB](#adapter-pcb)   
- -- [ESP Reader](#esp-reader)   
+ -- [Adapter PCB](#adapter-pcb)     
 
 ## Finding the right connection
 ### Inside the BlueSmart IP22 charger
@@ -251,8 +250,3 @@ With this you can use a standard ve.direct cable:
 </p>
 
 All files needed are in the pcb folder.
-
-### ESP Reader
-
-in the ESP_BlueSmart_Reader folder is a Script for an ESP8266 thats reads voltage and current and publish them with mqtt.
-
