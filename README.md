@@ -10,6 +10,7 @@
  -- [Connected to venus](#connected-to-venus)   
  -- [Manual Change Charge Current](#manual-change-charge-current)    
  -- [Automatic Change Charge Current](#automatic-change-charge-current)    
+ -- [Service Change Charge Current](#service-change-charge-current)     
 - [Reading and Adapter](#reading-and-adapter)   
  -- [Adapter PCB](#adapter-pcb)   
  -- [ESP Reader](#esp-reader)   
@@ -209,6 +210,35 @@ just found a problem that the charger does not accept a current value of 0.
 the minimum value is 3A     
 Now i need to find out how to turn the charging on and off.     
 
+### Service Change Charge Current
+
+In the directory ```bluesmart-charger``` are all files to install this automatic script as a service on venus os.    
+First off, a big thanks to [mr-manuel](https://github.com/mr-manuel) that created a bunch of templates that made this possible.   
+
+#### Config
+Copy or rename the ```config.sample.ini``` to ```config.ini``` in the ```bluesmart-charger``` folder and change it as you need it.
+
+#### Install
+Copy the ```bluesmart-charger``` folder to ```/data/etc``` on your Venus OS device
+
+Run bash ```/data/etc/bluesmart-charger/install.sh``` as root
+
+The daemon-tools should start this service automatically within seconds.
+
+#### Uninstall
+Run ```/data/etc/bluesmart-charger/uninstall.sh```
+
+#### Restart
+Run ```/data/etc/bluesmart-charger/restart.sh```
+
+#### Debugging
+The logs can be checked with ```tail -n 100 -F /data/log/bluesmart-charger/current | tai64nlocal```
+
+The service status can be checked with svstat: ```svstat /service/bluesmart-charger```
+
+This will output somethink like ```/service/bluesmart-charger: up (pid 5845) 185 seconds```
+
+If the seconds are under 5 then the service crashes and gets restarted all the time. If you do not see anything in the logs you can increase the log level in ```/data/etc/bluesmart-charger/config.ini``` by changing ```ogging = WARNING``` to ```logging = INFO``` or ```logging = DEBUG```
 
 
 ## Reading and Adapter
