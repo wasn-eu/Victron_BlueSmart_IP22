@@ -249,7 +249,7 @@ With this you can use a standard ve.direct cable:
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/adapter_pcb.jpg?raw=true" width=500>
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/adapter_3d.jpg?raw=true" width=500>
 </p>
-And there is a little for it.
+And there is a little case for it.
 <p align="center">
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/adapter_case.jpg?raw=true" width=500>
 </p>
