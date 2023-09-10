@@ -254,4 +254,7 @@ And there is a little case for it.
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/main/Images/adapter_case.jpg?raw=true" width=500>
 </p>
 
-All files needed are in the pcb folder.
+All files needed are in the pcb folder.    
+
+You can use a short (about 10cm) 6pin to 6pin flat ribbon cable with the 6pin sockets to connect the charger to the pcb.   
+the cable can be routed outside at the right side of the battery terminals. 
