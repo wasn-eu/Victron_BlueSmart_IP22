@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "*** starting bluemart-charger ***"
+exec 2>&1
+exec /data/etc/bluesmart-charger/bluesmart-charger.py
