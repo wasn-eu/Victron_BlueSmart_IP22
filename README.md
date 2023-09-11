@@ -7,12 +7,14 @@
  -- [Capture of Data](#capture-of-data)   
 - [Connecting to venus](#connecting-to-venus)   
  -- [Shematics of USB to TTL](#shematics-of-usb-to-ttl)    
- -- [Connected to venus](#connected-to-venus)   
+ -- [Connected to venus](#connected-to-venus) 
+- [Changing the Charging Current](#changing-the-charging-current)  
  -- [Manual Change Charge Current](#manual-change-charge-current)    
  -- [Service Change Charge Current](#service-change-charge-current)     
 - [Adapter](#adapter)   
  -- [Adapter PCB](#adapter-pcb)     
 
+      
 ## Finding the right connection
 ### Inside the BlueSmart IP22 charger
 
@@ -24,8 +26,8 @@ You can find the pinout here or in the Images folder Victron_BlueSmart_pinout.jp
 </p>
 
 The used bluetooth controller is a Raytec MDBT40.
-
-
+     
+     
 ### Capture of Data  
 The signal level is 3.3V and the baudrate is 19200.  
 After connecting a 3.3V TTL to USB converter to the RX/TX and GND pin i captured some data.  
@@ -52,7 +54,8 @@ It looks like that it is the ve.direct protocol.
 You can read the battery voltage (V  28790) and charging current (I  5100).   
 You have to divide the battery voltage and charging curent by 1000.   
 In this example my battery have 28.79V and is currentlt=y charged with 5.1A.  
-
+     
+     
 ## Connecting to venus
 ### Shematics of USB to TTL
 
@@ -64,8 +67,8 @@ IMPORTANT: change the jumper to 3.3V
 
 You have to use TTL to USB adapter for 3.3V TTL level.   
 If you use an isolated adapter you have to connect the 3.3V pin to the adapter, if not dont connect it.   
-
-
+     
+     
 ### Connected to venus
 
 if you connect the ttl to usb cable direct to a venus os device (i have on ehere running on a raspberry pi 4) 
@@ -83,7 +86,9 @@ the charger will show and you can see all information about it:
 <p align="center">
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Screenshot_04.jpg" width=500>  
 </p>
-
+     
+     
+## Changing the Charging Current
 ### Manual Change Charge Current
 
 just rewrote a little python script to change the charge current directly on the venus os raspberry.    
@@ -122,29 +127,29 @@ where X is the needed charging current in A
 just found a problem that the charger does not accept a current value of 0.     
 the minimum value is 3A     
 Now i need to find out how to turn the charging on and off.  
-   
-
+    
+     
 ### Service Change Charge Current
 
 In the directory ```bluesmart-charger``` are all files to install this automatic script as a service on venus os.    
 First off, a big thanks to [mr-manuel](https://github.com/mr-manuel) that created a bunch of templates that made this possible.   
-
+     
 #### Config
 Copy or rename the ```config.sample.ini``` to ```config.ini``` in the ```bluesmart-charger``` folder and change it as you need it.
-
+      
 #### Install
 Copy the ```bluesmart-charger``` folder to ```/data/etc``` on your Venus OS device
 
 Run bash ```/data/etc/bluesmart-charger/install.sh``` as root
 
 The daemon-tools should start this service automatically within seconds.
-
+     
 #### Uninstall
 Run ```/data/etc/bluesmart-charger/uninstall.sh```
-
+     
 #### Restart
 Run ```/data/etc/bluesmart-charger/restart.sh```
-
+     
 #### Debugging
 The logs can be checked with ```tail -n 100 -F /data/log/bluesmart-charger/current | tai64nlocal```
 
@@ -153,8 +158,8 @@ The service status can be checked with svstat: ```svstat /service/bluesmart-char
 This will output somethink like ```/service/bluesmart-charger: up (pid 5845) 185 seconds```
 
 If the seconds are under 5 then the service crashes and gets restarted all the time. If you do not see anything in the logs you can increase the log level in ```/data/etc/bluesmart-charger/config.ini``` by changing ```logging = WARNING``` to ```logging = INFO``` or ```logging = DEBUG```
-
-
+     
+     
 ## Adapter
 ### Adapter PCB
 
