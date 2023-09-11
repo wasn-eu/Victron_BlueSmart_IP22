@@ -87,6 +87,8 @@ else:
     ip = "127.0.0.1"
 
 def main():
+  ser = serial.Serial(interface,19200)
+  currentold = 0
 
   while(True):
     current = 0.0 
@@ -99,7 +101,10 @@ def main():
       decoder = BinaryPayloadDecoder.fromRegisters(result.registers, byteorder=Endian.Big)
       power=decoder.decode_16bit_int()
       if power < 0:
+
+        currentold = current
         current = power / 24 * (-1)
+        current += currentold
         logging.info("Grid Power:    {0:.0f}W".format(power))
         logging.info("Grid Current:  {0:.2f}A".format(current))
   
