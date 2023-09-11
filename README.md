@@ -3,16 +3,16 @@
 ## (c) by <img src="https://github.com/wasn-eu/CubeCell_Getting_Started/raw/master/images/wasn_logo.png" width=70>
 
 - [Finding the right connection](#finding-the-right-connection)   
- -- [Inside the BlueSmart IP22 charger](#inside-the-bluesmart-ip22-charger)   
- -- [Capture of Data](#capture-of-data)   
+  - [Inside the BlueSmart IP22 charger](#inside-the-bluesmart-ip22-charger)   
+  - [Capture of Data](#capture-of-data)   
 - [Connecting to venus](#connecting-to-venus)   
- -- [Shematics of USB to TTL](#shematics-of-usb-to-ttl)    
- -- [Connected to venus](#connected-to-venus) 
+  - [Shematics of USB to TTL](#shematics-of-usb-to-ttl)    
+  - [Connected to venus](#connected-to-venus) 
 - [Changing the Charging Current](#changing-the-charging-current)  
- -- [Manual Change Charge Current](#manual-change-charge-current)    
- -- [Service Change Charge Current](#service-change-charge-current)     
+  - [Manual Change Charge Current](#manual-change-charge-current)    
+  - [Service Change Charge Current](#service-change-charge-current)     
 - [Adapter](#adapter)   
- -- [Adapter PCB](#adapter-pcb)     
+  - [Adapter PCB](#adapter-pcb)     
 
       
 ## Finding the right connection
