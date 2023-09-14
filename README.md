@@ -166,6 +166,10 @@ If the seconds are under 5 then the service crashes and gets restarted all the t
 I have just created a little adapter pcb with a level shifter and isolation for RX and TX.   
 With this you can use a standard ve.direct cable:
 <p align="center">
+<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/master/Images/pcb_schematic.jpg?raw=true" width=500>
+</p>
+Here is how it looks like:
+<p align="center">
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/master/Images/adapter_pcb.jpg?raw=true" width=500>
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/master/Images/adapter_3d.jpg?raw=true" width=500>
 </p>
