@@ -92,21 +92,33 @@ def main():
 
   while(True):
     current = 0.0 
+    chargerstate = 0.0
     Defaults.Timeout = 5
     Defaults.Retries = 5
+
+#    client = ModbusClient(ip, port=502, timeout=3, unit_id=29)
+#    result = client.read_input_registers(2318, 1)
+#    if not result.isError():
+#      decoder = BinaryPayloadDecoder.fromRegisters(result.registers, byteorder=Endian.Big)
+#      chargerstate = decoder.decode_16bit_int()
+#      logging.info("Charger State:       {0:.0f}".format(chargerstate))      
+#    else:
+#      logging.error("Error:", result)
 
     client = ModbusClient(ip, port=502, timeout=3, unit_id=100)
     result = client.read_input_registers(phase, 1)
     if not result.isError():
       decoder = BinaryPayloadDecoder.fromRegisters(result.registers, byteorder=Endian.Big)
-      power=decoder.decode_16bit_int()
-      if power < 0:
+      power = decoder.decode_16bit_int()
+      if power < currentold:
 
-        currentold = current
         current = power / 24 * (-1)
+        currentold = current
         current += currentold
-        logging.info("Grid Power:    {0:.0f}W".format(power))
-        logging.info("Grid Current:  {0:.2f}A".format(current))
+        
+        logging.info("Grid Power:        {0:.0f}W".format(power))
+        logging.info("Grid Current last: {0:.2f}A".format(currentold))
+        logging.info("Grid Current:      {0:.2f}A".format(current))
   
         numP1 = (int)(current * 10)
         numP2 = (0x70 - numP1) & 0xFF
