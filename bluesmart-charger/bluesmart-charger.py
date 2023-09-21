@@ -66,6 +66,14 @@ else:
     interval = 30
 logging.debug(f"Interval: {interval}") 
 
+# get max charging current
+if "DEFAULT" in config and "maxcurrent" in config["DEFAULT"]:
+    maxcurrent = int(config["DEFAULT"]["maxcurrent"])
+else:
+    maxcurrent = 12
+logging.debug(f"Max Current: {maxcurrent}") 
+
+
 # get interface
 if "DEFAULT" in config and "interface" in config["DEFAULT"]:
     interface = config["DEFAULT"]["interface"]
@@ -115,6 +123,10 @@ def main():
         current = power / 24 * (-1)
         currentold = current
         current += currentold
+
+        if current > maxcurrent:
+          current = maxcurrent
+          logging.warning("Charging Current limit!")
         
         logging.info("Grid Power:        {0:.0f}W".format(power))
         logging.info("Grid Current last: {0:.2f}A".format(currentold))
