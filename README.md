@@ -43,9 +43,6 @@ the charger will show and you can see all information about it:
 <p align="center">
 <img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Screenshot_03.jpg" width=500>  
 </p>
-<p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Screenshot_04.jpg" width=500>  
-</p>
      
      
 ## Service Change Charge Current
