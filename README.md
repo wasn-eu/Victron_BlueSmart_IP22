@@ -68,6 +68,8 @@ These values can  be changed in the config file:
 - interface: the USB interface of the charger (DEFAULT: /dev/ttyUSB1)
 - intervall: how often the charging current should be calculated and send to the charger (DEFAULT: 30 seconds)
 - maxcurrent: max charging current to limit this value (DEFAULT: 12 A)
+
+After changing the config file run the ```restart.sh``` script to activate the new config.     
      
 #### Uninstall
 Run ```/data/etc/bluesmart-charger/uninstall.sh```
