@@ -54,7 +54,7 @@ The daemon-tools should start this service automatically within seconds.
 Copy or rename the ```config.sample.ini``` to ```config.ini``` in the ```bluesmart-charger``` folder and change it as you need it.    
 These values can  be changed in the config file:     
 
-| **KEY** | **DESCIPTION** | **DEFAULT** |
+| **KEY** | **DESCRIPTION** | **DEFAULT** |
 | :---: | :--- | :---: |
 |  **ip** | IP of your venus device | 127.0.0.1 | 
 |**phase**| modbus service id for the phase your system is connected to | 820 |
