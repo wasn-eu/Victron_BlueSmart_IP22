@@ -18,10 +18,9 @@
      
 ## Connecting to venus
 ### Connect USB to TTL Converter
-
-<p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/master/Images/Victron_BlueSmart_ftdi.jpg?raw=true" width=500>  
-</p>
+     
+![Victron FTDI Schematic](/Images/Victron_BlueSmart_ftdi.jpg)
+      
 On the picture the jumper for the TTL level is wrong. 
 IMPORTANT: change the jumper to 3.3V    
 
@@ -34,15 +33,9 @@ If you use an isolated adapter you have to connect the 3.3V pin to the adapter, 
 if you connect the ttl to usb cable direct to a venus os device (i have on here running on a raspberry pi 4) 
 the charger will show and you can see all information about it:
   
-<p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/ScreenShot_01.jpg" width=500>  
-</p>
-<p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Screenshot_02.jpg" width=500>  
-</p>
-<p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/raw/master/Images/Screenshot_03.jpg" width=500>  
-</p>
+![Screenshot01](../../raw/master/Images/ScreenShot_01.jpg)
+![Screenshot02](../../raw/master/Images/Screenshot_02.jpg) 
+![Screenshot03](../../raw/master/Images/Screenshot_03.jpg) 
      
      
 ## Service Change Charge Current
@@ -89,18 +82,15 @@ If the seconds are under 5 then the service crashes and gets restarted all the t
 
 I have just created a little adapter pcb with a level shifter and isolation for RX and TX.   
 With this you can use a standard ve.direct cable:
-<p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/master/Images/pcb_schematic.jpg?raw=true" width=500>
-</p>
-Here is how it looks like:
-<p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/master/Images/adapter_pcb.jpg?raw=true" width=500>
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/master/Images/adapter_3d.jpg?raw=true" width=500>
-</p>
-And there is a little case for it.
-<p align="center">
-<img src="https://github.com/wasn-eu/Victron_BlueSmart_IP22/blob/master/Images/adapter_case.jpg?raw=true" width=500>
-</p>
+![Adapter Schematic](/Images/pcb_schematic.jpg)
+     
+Here is how it looks like:       
+![PCB](/Images/adapter_pcb.jpg)
+![Adapter 3D](/Images/adapter_3d.jpg)
+      
+And there is a little case for it.      
+![Adapter Case](/Images/adapter_case.jpg)
+     
 
 All files needed are in the pcb folder.    
 
