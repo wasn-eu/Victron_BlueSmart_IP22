@@ -60,11 +60,11 @@ The daemon-tools should start this service automatically within seconds.
 #### Config
 Copy or rename the ```config.sample.ini``` to ```config.ini``` in the ```bluesmart-charger``` folder and change it as you need it.    
 These values can  be changed in the config file:     
-- ip: IP of your venus device (DEFAULT: 127.0.0.1)
-- phase: modbus service id for the phase your system is connected to (DEFAULT: 820)
-- interface: the USB interface of the charger (DEFAULT: /dev/ttyUSB1)
-- intervall: how often the charging current should be calculated and send to the charger (DEFAULT: 30 seconds)
-- maxcurrent: max charging current to limit this value (DEFAULT: 12 A)
+- **ip**: IP of your venus device (_DEFAULT: 127.0.0.1_)
+- **phase**: modbus service id for the phase your system is connected to (_DEFAULT: 820_)
+- **interface**: the USB interface of the charger (_DEFAULT: /dev/ttyUSB1_)
+- **intervall**: how often the charging current should be calculated and send to the charger (_DEFAULT: 30 seconds_)
+- **maxcurrent**: max charging current to limit this value (_DEFAULT: 12 A_)
 
 After changing the config file run the ```restart.sh``` script to activate the new config.     
      
