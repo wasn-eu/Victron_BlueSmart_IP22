@@ -33,8 +33,8 @@ If you use an isolated adapter you have to connect the 3.3V pin to the adapter, 
 if you connect the ttl to usb cable direct to a venus os device (i have on here running on a raspberry pi 4) 
 the charger will show and you can see all information about it:
   
-![Screenshot01](../../raw/master/Images/ScreenShot_01.jpg)
-![Screenshot02](../../raw/master/Images/Screenshot_02.jpg) 
+![Screenshot01](../../raw/master/Images/ScreenShot_01.jpg)      
+![Screenshot02](../../raw/master/Images/Screenshot_02.jpg)       
 ![Screenshot03](../../raw/master/Images/Screenshot_03.jpg) 
      
      
@@ -53,11 +53,14 @@ The daemon-tools should start this service automatically within seconds.
 #### Config
 Copy or rename the ```config.sample.ini``` to ```config.ini``` in the ```bluesmart-charger``` folder and change it as you need it.    
 These values can  be changed in the config file:     
-- **ip**: IP of your venus device (_DEFAULT: 127.0.0.1_)
-- **phase**: modbus service id for the phase your system is connected to (_DEFAULT: 820_)
-- **interface**: the USB interface of the charger (_DEFAULT: /dev/ttyUSB1_)
-- **intervall**: how often the charging current should be calculated and send to the charger (_DEFAULT: 30 seconds_)
-- **maxcurrent**: max charging current to limit this value (_DEFAULT: 12 A_)
+
+| **KEY** | **DESCIPTION** | **DEFAULT** |
+| :---: | :--- | :---: |
+|  **ip** | IP of your venus device | 127.0.0.1 | 
+|**phase**| modbus service id for the phase your system is connected to | 820 |
+|**interface** | the USB interface of the charger | /dev/ttyUSB1 |
+|**intervall** | how often the charging current should be calculated and send to the charger |30 seconds |
+|**maxcurrent** | max charging current to limit this value | 12 A |
 
 After changing the config file run the ```restart.sh``` script to activate the new config.     
      
