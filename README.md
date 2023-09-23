@@ -2,6 +2,8 @@
 ## Using the BlueSmart IP22 Charger without Bluetooth.
 ## (c) by [<img src="https://www.pvtex.de/user/themes/darkquark/images/logo/logo_trans.png" width=70>](https://www.wasn.eu)
 
+# all new updates are now under [github://pvtex/Victron_BlueSmart_IP22](https://github.com/pvtex/Victron_BlueSmart_IP22)
+
 - [Connecting to venus](#connecting-to-venus)   
   - [Connect USB to TTL Converter](#connect-usb-to-ttl-converter)    
   - [Connected to venus](#connected-to-venus) 
