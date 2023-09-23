@@ -1,6 +1,6 @@
 # Victron_BlueSmart_IP22
 ## Using the BlueSmart IP22 Charger without Bluetooth.
-## (c) by [<img src="https://github.com/wasn-eu/CubeCell_Getting_Started/raw/master/images/wasn_logo.png" width=70>](https://www.wasn.eu)
+## (c) by [<img src="https://www.pvtex.de/user/themes/darkquark/images/logo/logo_trans.png" width=70>](https://www.wasn.eu)
 
 - [Connecting to venus](#connecting-to-venus)   
   - [Connect USB to TTL Converter](#connect-usb-to-ttl-converter)    
